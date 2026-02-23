@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <RootNamespace>JG.Logging</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>JG.LoggingKit</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>James Gober</Authors>
+    <Description>High-performance structured logging for .NET with correlation IDs, file rotation, and log enrichment. Built on Microsoft.Extensions.Logging.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/jamesgober/dotnet-logging-kit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jamesgober/dotnet-logging-kit</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/jamesgober/dotnet-logging-kit</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>logging;structured-logging;correlation-id;log-rotation;dotnet;async;json;file-sink</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

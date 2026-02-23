@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>JG.LoggingKit</id>
+    <version>1.0.0</version>
+    <authors>James Gober</authors>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/jamesgober/dotnet-logging-kit</projectUrl>
+    <description>High-performance structured logging for .NET with correlation IDs, file rotation, and log enrichment. Built on Microsoft.Extensions.Logging.</description>
+    <tags>logging structured-logging correlation-id log-rotation dotnet async json file-sink</tags>
+    <repository type="git" url="https://github.com/jamesgober/dotnet-logging-kit" commit="252b22a8b988713a8438ffa6adf9216a16680b83" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.Extensions.Logging" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging.Abstractions" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Options" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\bin\Release\net8.0\dotnet-logging-kit.dll" target="lib\net8.0\dotnet-logging-kit.dll" />
+    <file src="C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\bin\Release\net8.0\dotnet-logging-kit.xml" target="lib\net8.0\dotnet-logging-kit.xml" />
+    <file src="C:\Dev\libs\dotnet\dotnet-logging-kit\README.md" target="\README.md" />
+  </files>
+</package>

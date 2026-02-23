@@ -1,0 +1,15 @@
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\bin\Release\net8.0\dotnet-logging-kit.deps.json
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\bin\Release\net8.0\dotnet-logging-kit.dll
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\bin\Release\net8.0\dotnet-logging-kit.pdb
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\bin\Release\net8.0\dotnet-logging-kit.xml
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.csproj.AssemblyReference.cache
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.AssemblyInfoInputs.cache
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.AssemblyInfo.cs
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.csproj.CoreCompileInputs.cache
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.sourcelink.json
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.dll
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\refint\dotnet-logging-kit.dll
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.xml
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\dotnet-logging-kit.pdb
+C:\Dev\libs\dotnet\dotnet-logging-kit\src\dotnet-logging-kit\obj\Release\net8.0\ref\dotnet-logging-kit.dll

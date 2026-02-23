@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotnet-logging-kit</name>
+    </assembly>
+    <members>
+        <member name="T:JG.Logging.Abstractions.ILogEnricher">
+            <summary>
+            Represents a component that enriches log entries with additional contextual data.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Abstractions.ILogEnricher.Enrich(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Enriches a log entry with additional properties or state.
+            </summary>
+            <param name="properties">A dictionary where enriched properties should be added.</param>
+        </member>
+        <member name="T:JG.Logging.Abstractions.ILogFormatter">
+            <summary>
+            Represents a formatter that converts log entries to string output.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Abstractions.ILogFormatter.Format(JG.Logging.Abstractions.LogEntry)">
+            <summary>
+            Formats a log entry into a string representation.
+            </summary>
+            <param name="entry">The log entry to format.</param>
+            <returns>The formatted log output.</returns>
+        </member>
+        <member name="T:JG.Logging.Abstractions.ILogScope">
+            <summary>
+            Represents a scoped context for grouping related log entries with shared properties.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Abstractions.ILogScope.AddProperty(System.String,System.Object)">
+            <summary>
+            Adds a property to the current scope.
+            </summary>
+            <param name="key">The property key.</param>
+            <param name="value">The property value.</param>
+        </member>
+        <member name="M:JG.Logging.Abstractions.ILogScope.GetProperties">
+            <summary>
+            Gets all properties in the current scope.
+            </summary>
+            <returns>A dictionary of scope properties.</returns>
+        </member>
+        <member name="T:JG.Logging.Abstractions.ILogSink">
+            <summary>
+            Represents a destination for structured log output.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Abstractions.ILogSink.WriteAsync(JG.Logging.Abstractions.LogEntry,System.Threading.CancellationToken)">
+            <summary>
+            Writes a structured log entry asynchronously.
+            </summary>
+            <param name="entry">The log entry to write.</param>
+            <param name="cancellationToken">Cancellation token for the write operation.</param>
+            <returns>A task representing the asynchronous write operation.</returns>
+        </member>
+        <member name="T:JG.Logging.Abstractions.LogEntry">
+            <summary>
+            Represents a structured log entry containing all contextual information about a log event.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.CorrelationId">
+            <summary>
+            Gets the correlation ID associated with this log entry for request tracing.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.Timestamp">
+            <summary>
+            Gets the timestamp when the log entry was created.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.Level">
+            <summary>
+            Gets the log level (Information, Warning, Error, etc.).
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.EventId">
+            <summary>
+            Gets the event ID associated with this log entry.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.Message">
+            <summary>
+            Gets the formatted log message.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.Exception">
+            <summary>
+            Gets the exception (if any) associated with this log entry.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Abstractions.LogEntry.Properties">
+            <summary>
+            Gets the enriched properties for this log entry.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Enrichment.SecretSanitizationEnricher">
+            <summary>
+            Sanitizes log entries to prevent accidental exposure of secrets and sensitive data.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Enrichment.SecretSanitizationEnricher.Enrich(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sanitizes a log entry to remove or mask sensitive information.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Enrichment.SecretSanitizationEnricher.Sanitize(System.String)">
+            <summary>
+            Sanitizes a string value to remove sensitive patterns.
+            </summary>
+            <param name="value">The value to sanitize.</param>
+            <returns>The sanitized value with sensitive data masked.</returns>
+        </member>
+        <member name="T:JG.Logging.Enrichment.MachineNameEnricher">
+            <summary>
+            Enriches log entries with machine/environment information.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Enrichment.MachineNameEnricher.Enrich(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Enriches a log entry with the machine name.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Enrichment.EnvironmentEnricher">
+            <summary>
+            Enriches log entries with environment information.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Enrichment.EnvironmentEnricher.Enrich(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Enriches a log entry with the current environment.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Enrichment.VersionEnricher">
+            <summary>
+            Enriches log entries with assembly version information.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Enrichment.VersionEnricher.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of VersionEnricher for a specific type.
+            </summary>
+            <param name="type">The type from the assembly to extract version from.</param>
+        </member>
+        <member name="M:JG.Logging.Enrichment.VersionEnricher.Enrich(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Enriches a log entry with version information.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Enrichment.ScopeContextEnricher">
+            <summary>
+            Enriches log entries with scope context properties.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Enrichment.ScopeContextEnricher.Enrich(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Enriches a log entry with properties from the current scope context.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Extensions.LoggingKitServiceCollectionExtensions">
+            <summary>
+            Extension methods for registering the structured logging kit with dependency injection.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Extensions.LoggingKitServiceCollectionExtensions.AddStructuredLogging(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{JG.Logging.Extensions.StructuredLoggingBuilder})">
+            <summary>
+            Adds the structured logging kit to the service collection.
+            </summary>
+            <param name="services">The service collection to register services in.</param>
+            <param name="configure">An optional action to configure the logging kit.</param>
+            <returns>The service collection for chaining.</returns>
+        </member>
+        <member name="T:JG.Logging.Extensions.StructuredLoggingBuilder">
+            <summary>
+            Builder for configuring the structured logging kit.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Initializes a new instance of the StructuredLoggingBuilder class.
+            </summary>
+            <param name="services">The service collection to configure.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when services is null.</exception>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.AddSink(JG.Logging.Abstractions.ILogSink)">
+            <summary>
+            Adds a sink to the logging pipeline.
+            </summary>
+            <param name="sink">The sink to add.</param>
+            <returns>This builder for chaining.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when sink is null.</exception>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.AddConsoleSink(JG.Logging.Abstractions.ILogFormatter)">
+            <summary>
+            Adds a console sink with the specified formatter.
+            </summary>
+            <param name="formatter">The formatter to use for console output.</param>
+            <returns>This builder for chaining.</returns>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.AddFileSink(System.String,System.String,System.Int64,JG.Logging.Sinks.RollingInterval,System.Int32,JG.Logging.Abstractions.ILogFormatter)">
+            <summary>
+            Adds a file sink with the specified configuration.
+            </summary>
+            <param name="directory">The directory to write log files to.</param>
+            <param name="fileNamePrefix">The prefix for log file names.</param>
+            <param name="maxFileSizeBytes">Maximum size of a single log file in bytes.</param>
+            <param name="rollingInterval">Interval for rolling files.</param>
+            <param name="maxBackupFiles">Maximum number of backup files to keep.</param>
+            <param name="formatter">The formatter to use for file output.</param>
+            <returns>This builder for chaining.</returns>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.AddEnricher(JG.Logging.Abstractions.ILogEnricher)">
+            <summary>
+            Adds an enricher to the logging pipeline.
+            </summary>
+            <param name="enricher">The enricher to add.</param>
+            <returns>This builder for chaining.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when enricher is null.</exception>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.AddStandardEnrichers(System.Boolean,System.Type)">
+            <summary>
+            Adds standard enrichers (machine name, environment, scope context).
+            </summary>
+            <param name="includeVersion">Whether to include version enricher for the specified type.</param>
+            <param name="versionType">The type to extract version information from.</param>
+            <returns>This builder for chaining.</returns>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Sets the default minimum log level.
+            </summary>
+            <param name="level">The default log level.</param>
+            <returns>This builder for chaining.</returns>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.SetCategoryLevel(System.String,Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Sets the minimum log level for a specific category.
+            </summary>
+            <param name="category">The category name.</param>
+            <param name="level">The log level for this category.</param>
+            <returns>This builder for chaining.</returns>
+        </member>
+        <member name="M:JG.Logging.Extensions.StructuredLoggingBuilder.SetNamespaceLevel(System.String,Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Sets the minimum log level for a specific namespace.
+            </summary>
+            <param name="namespaceName">The namespace prefix.</param>
+            <param name="level">The log level for this namespace.</param>
+            <returns>This builder for chaining.</returns>
+        </member>
+        <member name="T:JG.Logging.Formatters.JsonFormatter">
+            <summary>
+            JSON log formatter that outputs logs in JSON format for structured parsing.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Formatters.JsonFormatter.Format(JG.Logging.Abstractions.LogEntry)">
+            <summary>
+            Formats a log entry into a JSON string representation.
+            </summary>
+            <param name="entry">The log entry to format.</param>
+            <returns>The formatted log output in JSON.</returns>
+        </member>
+        <member name="T:JG.Logging.Formatters.PlainTextFormatter">
+            <summary>
+            Plain text log formatter that outputs logs in a simple, human-readable format.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Formatters.PlainTextFormatter.Format(JG.Logging.Abstractions.LogEntry)">
+            <summary>
+            Formats a log entry into a plain text string representation.
+            </summary>
+            <param name="entry">The log entry to format.</param>
+            <returns>The formatted log output.</returns>
+        </member>
+        <member name="T:JG.Logging.Internal.CorrelationIdProvider">
+            <summary>
+            Thread-safe correlation ID provider for request tracing across the application.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Internal.CorrelationIdProvider.GetCorrelationId">
+            <summary>
+            Gets the current correlation ID for the ambient context.
+            </summary>
+            <returns>The correlation ID, or null if not set.</returns>
+        </member>
+        <member name="M:JG.Logging.Internal.CorrelationIdProvider.SetCorrelationId(System.String)">
+            <summary>
+            Sets the correlation ID for the ambient context.
+            </summary>
+            <param name="correlationId">The correlation ID to set, or null to clear.</param>
+            <returns>A disposable that restores the previous correlation ID when disposed.</returns>
+        </member>
+        <member name="T:JG.Logging.Internal.LogLevelFilter">
+            <summary>
+            Manages log level filtering rules for different categories and namespaces.
+            </summary>
+        </member>
+        <member name="P:JG.Logging.Internal.LogLevelFilter.DefaultLevel">
+            <summary>
+            Gets or sets the default minimum log level.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Internal.LogLevelFilter.SetCategoryLevel(System.String,Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Sets the minimum log level for a specific category.
+            </summary>
+            <param name="category">The category name (e.g., "MyApp.Services.UserService").</param>
+            <param name="level">The minimum log level for this category.</param>
+        </member>
+        <member name="M:JG.Logging.Internal.LogLevelFilter.SetNamespaceLevel(System.String,Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Sets the minimum log level for a specific namespace.
+            </summary>
+            <param name="namespaceName">The namespace prefix (e.g., "MyApp.Services").</param>
+            <param name="level">The minimum log level for this namespace.</param>
+        </member>
+        <member name="M:JG.Logging.Internal.LogLevelFilter.IsEnabled(System.String,Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Determines if a log level is enabled for a given category.
+            </summary>
+            <param name="category">The log category.</param>
+            <param name="logLevel">The log level to check.</param>
+            <returns>True if the log level is enabled for this category; otherwise false.</returns>
+        </member>
+        <member name="T:JG.Logging.Internal.ScopeContextProvider">
+            <summary>
+            Thread-safe scope context provider for grouping related log entries.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Internal.ScopeContextProvider.GetScopeProperties">
+            <summary>
+            Gets the current scope properties.
+            </summary>
+            <returns>A dictionary of all properties in the current scope hierarchy, or empty if no scope is active.</returns>
+        </member>
+        <member name="M:JG.Logging.Internal.ScopeContextProvider.CreateScope">
+            <summary>
+            Creates a new scope that groups related log entries.
+            </summary>
+            <returns>A disposable scope that restores the previous scope context when disposed.</returns>
+        </member>
+        <member name="M:JG.Logging.Internal.ScopeContextProvider.AddPropertyToCurrentScope(System.String,System.Object)">
+            <summary>
+            Adds a property to the current scope.
+            </summary>
+            <param name="key">The property key.</param>
+            <param name="value">The property value.</param>
+        </member>
+        <member name="T:JG.Logging.Internal.StructuredLogger">
+            <summary>
+            High-performance structured logger implementation with allocation-free hot paths.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Internal.StructuredLoggerProvider">
+            <summary>
+            Logger provider that creates instances of StructuredLogger with configured sinks and enrichers.
+            </summary>
+        </member>
+        <member name="T:JG.Logging.Sinks.ConsoleSink">
+            <summary>
+            Console sink that writes formatted log entries to the console output stream.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Sinks.ConsoleSink.#ctor(JG.Logging.Abstractions.ILogFormatter)">
+            <summary>
+            Initializes a new instance of the ConsoleSink class.
+            </summary>
+            <param name="formatter">The formatter to use for formatting log entries.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when formatter is null.</exception>
+        </member>
+        <member name="M:JG.Logging.Sinks.ConsoleSink.WriteAsync(JG.Logging.Abstractions.LogEntry,System.Threading.CancellationToken)">
+            <summary>
+            Writes a formatted log entry to the console.
+            </summary>
+            <param name="entry">The log entry to write.</param>
+            <param name="cancellationToken">Cancellation token for the write operation.</param>
+            <returns>A task representing the asynchronous write operation.</returns>
+        </member>
+        <member name="M:JG.Logging.Sinks.ConsoleSink.DisposeAsync">
+            <summary>
+            Releases resources associated with this sink.
+            </summary>
+            <returns>A task representing the asynchronous disposal operation.</returns>
+        </member>
+        <member name="T:JG.Logging.Sinks.RollingInterval">
+            <summary>
+            Specifies the interval for rolling log files.
+            </summary>
+        </member>
+        <member name="F:JG.Logging.Sinks.RollingInterval.None">
+            <summary>
+            No rolling (single file).</summary>
+        </member>
+        <member name="F:JG.Logging.Sinks.RollingInterval.Day">
+            <summary>
+            Roll every day at midnight.</summary>
+        </member>
+        <member name="F:JG.Logging.Sinks.RollingInterval.Hour">
+            <summary>
+            Roll every hour on the hour.</summary>
+        </member>
+        <member name="F:JG.Logging.Sinks.RollingInterval.Month">
+            <summary>
+            Roll every month on the first day.</summary>
+        </member>
+        <member name="T:JG.Logging.Sinks.FileSink">
+            <summary>
+            File sink that writes formatted log entries to rotating log files.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Sinks.FileSink.#ctor(JG.Logging.Abstractions.ILogFormatter,System.String,System.String,System.Int64,JG.Logging.Sinks.RollingInterval,System.Int32)">
+            <summary>
+            Initializes a new instance of the FileSink class.
+            </summary>
+            <param name="formatter">The formatter to use for formatting log entries.</param>
+            <param name="directory">The directory to write log files to.</param>
+            <param name="fileNamePrefix">The prefix for log file names.</param>
+            <param name="maxFileSizeBytes">Maximum size of a single log file in bytes. Default 10MB.</param>
+            <param name="rollingInterval">Interval for rolling files. Default is None.</param>
+            <param name="maxBackupFiles">Maximum number of backup files to keep. Default 10.</param>
+        </member>
+        <member name="M:JG.Logging.Sinks.FileSink.WriteAsync(JG.Logging.Abstractions.LogEntry,System.Threading.CancellationToken)">
+            <summary>
+            Writes a formatted log entry to the file.
+            </summary>
+        </member>
+        <member name="M:JG.Logging.Sinks.FileSink.DisposeAsync">
+            <summary>
+            Releases resources associated with this sink.
+            </summary>
+        </member>
+    </members>
+</doc>

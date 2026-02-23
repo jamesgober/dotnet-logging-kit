@@ -2,12 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop]
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
-  build:
+  build-and-test:
+    name: Build & Test
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -15,18 +16,42 @@ jobs:
         dotnet: ['8.0.x']
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet }}
 
-      - name: Restore
+      - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build
-        run: dotnet build --no-restore --configuration Release -warnaserror
+      - name: Build (Release)
+        run: dotnet build --no-restore --configuration Release --verbosity minimal
 
-      - name: Test
+      - name: Run tests
         run: dotnet test --no-build --configuration Release --verbosity normal
+
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Verify no warnings
+        run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=true
+
+      - name: Verify documentation
+        run: dotnet build --configuration Release --no-restore /p:GenerateDocumentationFile=true
