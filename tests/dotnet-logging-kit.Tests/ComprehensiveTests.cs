@@ -7,6 +7,7 @@ using FluentAssertions;
 using Microsoft.Extensions.Logging;
 
 #pragma warning disable CA1707
+#pragma warning disable CS1591
 
 namespace JG.Logging.Tests;
 
@@ -367,3 +368,4 @@ public class ConcurrencyTests
 }
 
 #pragma warning restore CA1707
+#pragma warning restore CS1591

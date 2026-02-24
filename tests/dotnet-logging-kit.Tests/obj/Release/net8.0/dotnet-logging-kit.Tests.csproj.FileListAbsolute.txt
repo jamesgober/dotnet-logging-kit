@@ -112,3 +112,5 @@ C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Tests\obj\Release
 C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Tests\obj\Release\net8.0\dotnet-logging-kit.Tests.pdb
 C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Tests\obj\Release\net8.0\dotnet-logging-kit.Tests.genruntimeconfig.cache
 C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Tests\obj\Release\net8.0\ref\dotnet-logging-kit.Tests.dll
+C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Tests\bin\Release\net8.0\dotnet-logging-kit.Tests.xml
+C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Tests\obj\Release\net8.0\dotnet-logging-kit.Tests.xml

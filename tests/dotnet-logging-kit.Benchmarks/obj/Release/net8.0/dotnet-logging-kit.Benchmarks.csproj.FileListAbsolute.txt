@@ -94,3 +94,5 @@ C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Benchmarks\obj\Re
 C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Benchmarks\obj\Release\net8.0\dotnet-logging-kit.Benchmarks.pdb
 C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Benchmarks\obj\Release\net8.0\dotnet-logging-kit.Benchmarks.genruntimeconfig.cache
 C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Benchmarks\obj\Release\net8.0\ref\dotnet-logging-kit.Benchmarks.dll
+C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Benchmarks\bin\Release\net8.0\dotnet-logging-kit.Benchmarks.xml
+C:\Dev\libs\dotnet\dotnet-logging-kit\tests\dotnet-logging-kit.Benchmarks\obj\Release\net8.0\dotnet-logging-kit.Benchmarks.xml

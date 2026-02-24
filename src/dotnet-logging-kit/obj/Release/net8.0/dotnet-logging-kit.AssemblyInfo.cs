@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("High-performance structured logging for .NET with correlation IDs, file rotation," +
     " and log enrichment. Built on Microsoft.Extensions.Logging."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+252b22a8b988713a8438ffa6adf9216a16680b83")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c608da083a9d6a33b35e965960f14a966f613f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet-logging-kit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet-logging-kit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

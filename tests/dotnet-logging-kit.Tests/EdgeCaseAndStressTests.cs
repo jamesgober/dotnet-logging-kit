@@ -8,6 +8,7 @@ using FluentAssertions;
 using Microsoft.Extensions.Logging;
 
 #pragma warning disable CA1707
+#pragma warning disable CS1591
 
 namespace JG.Logging.Tests;
 

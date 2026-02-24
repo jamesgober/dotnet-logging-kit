@@ -1,11 +1,12 @@
 using JG.Logging.Abstractions;
 using JG.Logging.Formatters;
-using JG.Logging.Sinks;
 using JG.Logging.Internal;
+using JG.Logging.Sinks;
 using Xunit;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 
+#pragma warning disable CS1591
 #pragma warning disable CA1707
 
 namespace JG.Logging.Tests;

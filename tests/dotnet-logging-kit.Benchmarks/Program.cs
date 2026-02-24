@@ -5,6 +5,8 @@ using JG.Logging.Formatters;
 using JG.Logging.Sinks;
 using Microsoft.Extensions.Logging;
 
+#pragma warning disable CS1591
+
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
