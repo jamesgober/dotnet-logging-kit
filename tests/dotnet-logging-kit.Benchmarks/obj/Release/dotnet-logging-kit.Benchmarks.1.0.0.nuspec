@@ -5,7 +5,7 @@
     <version>1.0.0</version>
     <authors>dotnet-logging-kit.Benchmarks</authors>
     <description>Package Description</description>
-    <repository type="git" commit="252b22a8b988713a8438ffa6adf9216a16680b83" />
+    <repository type="git" commit="d3e8e32f694e2ee5e69443701fc7df52a74c22d3" />
     <dependencies>
       <group targetFramework="net8.0">
         <dependency id="JG.LoggingKit" version="1.0.0" exclude="Build,Analyzers" />
