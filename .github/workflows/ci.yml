@@ -27,7 +27,7 @@ jobs:
           dotnet-version: ${{ matrix.dotnet }}
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore --verbosity minimal
 
       - name: Build (Release)
         run: dotnet build --no-restore --configuration Release --verbosity minimal
@@ -48,10 +48,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore --verbosity minimal
 
       - name: Verify no warnings
-        run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=true
+        run: dotnet build --configuration Release --no-restore /p:TreatWarningsAsErrors=true --verbosity minimal
 
       - name: Verify documentation
-        run: dotnet build --configuration Release --no-restore /p:GenerateDocumentationFile=true
+        run: dotnet build --configuration Release --no-restore /p:GenerateDocumentationFile=true --verbosity minimal

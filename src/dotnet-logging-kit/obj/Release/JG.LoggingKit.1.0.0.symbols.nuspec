@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/jamesgober/dotnet-logging-kit</projectUrl>
     <description>High-performance structured logging for .NET with correlation IDs, file rotation, and log enrichment. Built on Microsoft.Extensions.Logging.</description>
     <tags>logging structured-logging correlation-id log-rotation dotnet async json file-sink</tags>
-    <repository type="git" url="https://github.com/jamesgober/dotnet-logging-kit" commit="d3e8e32f694e2ee5e69443701fc7df52a74c22d3" />
+    <repository type="git" url="https://github.com/jamesgober/dotnet-logging-kit" commit="e19af3ead886fe5f61838a4a6b8a83a0af56cd50" />
     <dependencies>
       <group targetFramework="net8.0">
         <dependency id="Microsoft.Extensions.Logging" version="8.0.0" exclude="Build,Analyzers" />

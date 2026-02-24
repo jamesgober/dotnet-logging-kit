@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnet-logging-kit.Benchmarks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3e8e32f694e2ee5e69443701fc7df52a74c22d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e19af3ead886fe5f61838a4a6b8a83a0af56cd50")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet-logging-kit.Benchmarks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet-logging-kit.Benchmarks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
